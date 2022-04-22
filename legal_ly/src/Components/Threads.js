@@ -10,6 +10,18 @@ function Threads() {
   const [checked, setchecked] = useState(false);
   const [input, setinput] = useState("");
   const [msg, setmsg] = useState(input);
+  const [typing, settyping] = useState(false);
+
+  const responses = [
+    {
+      input: "Hello bot",
+      res: "Hi User",
+    },
+    {
+      input: "Hey what are the prime laws of the country",
+      res: "Hi User2",
+    },
+  ];
 
   const handleClick = () => {
     if (checked) {
@@ -18,7 +30,7 @@ function Threads() {
       setchecked(true);
     }
   };
-
+  console.log(msg);
   useEffect(() => {}, [msg]);
   return (
     <div className="flex flex-col justify-between h-[98vh]">
@@ -49,28 +61,37 @@ function Threads() {
         </div>
       </div>
       {/* Message Area */}
-      <div className="h-[70vh] p-12">
-        <Input msg={msg} />
-        <Response msg="Hello" />
+      <div className="overflow-y-scroll h-[75vh]">
+        {responses.map((res) => (
+          <div className="py-2 px-16">
+            <Response msg={res.res} />
+            <Input msg={res.input} />
+          </div>
+        ))}
       </div>
-      <div className="mx-2 bg-[#222222] flex justify-between w-[80vw] px-4 py-2 ">
+
+      <div className="mx-2 bg-[#222222] flex justify-between w-[80vw] px-4 py-2 rounded-lg">
         <input
           value={input}
           type="text"
           placeholder="Type your query..."
-          className="px-4 w-[60vw] h-[7vh] bg-[#222222] rounded-lg  text-white onfocus:outline-none onfocus:border-none"
+          className="px-4 w-[60vw] h-[7vh] bg-[#222222] rounded-lg  text-white focus:outline-none focus:border-none"
           onChange={(e) => {
             setinput(e.target.value);
+            if (input.length() > 0) {
+              settyping(true);
+            }
           }}
         />
-        <AiOutlineRightCircle
-          className="text-white w-12 h-8 justify-center cursor-pointer"
-          onClick={() => {
-            setmsg(input);
-
-            console.log(msg);
-          }}
-        />
+        <button>
+          <AiOutlineRightCircle
+            className="text-white w-12 h-8 justify-center cursor-pointer mt-2"
+            onClick={() => {
+              setmsg(input);
+              setinput("");
+            }}
+          />
+        </button>
       </div>
     </div>
   );

@@ -1,10 +1,10 @@
 import React from "react";
 
-const Input = ({ input }) => {
+const Input = ({ msg }) => {
   return (
-    <div className="p-3 ">
-      <div className="h-fit rounded-lg text-sm text-white rounded-br-none ml-auto bg-[#494949] p-3 w-fit">
-        Hello bot !
+    <div className="w-[70vw]">
+      <div className="w-fit p-3 h-fit bg-[#494949]  rounded-lg text-center text-sm text-white rounded-bl-none align-right ml-[55vw]">
+        {msg}
       </div>
     </div>
   );
