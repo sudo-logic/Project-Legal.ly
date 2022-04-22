@@ -58,7 +58,7 @@ function Threads() {
           value={input}
           type="text"
           placeholder="Type your query..."
-          className="px-4 w-[60vw] h-[7vh] bg-[#222222] rounded-lg  text-white "
+          className="px-4 w-[60vw] h-[7vh] bg-[#222222] rounded-lg  text-white onfocus:outline-none onfocus:border-none"
           onChange={(e) => {
             setinput(e.target.value);
           }}
