@@ -8,6 +8,7 @@ from flask_cors import CORS, cross_origin
 from matplotlib.pyplot import text
 import pandas as pd
 import difflib
+import model
 
 app = Flask(__name__)
 cors = CORS(app)
@@ -29,12 +30,12 @@ def get_bot_response():
 
     match = difflib.get_close_matches(msg, topics, n=1)
 
-    print(difflib.get_close_matches(msg, greetings))
+    # print(difflib.get_close_matches(msg, greetings))
     
     if difflib.get_close_matches(msg, greetings):
         return "Hi There! Welcome to Legal.ly\nPlease type 'topics' to get a list of the topics I have knowledge on."
     
-    print(msg.lower().strip())
+    # print(msg.lower().strip())
     
     if msg.lower().strip() in ['topics', 'topic']:
         response = 'You can ask me anything about the following topics:\n' + " | ".join(topics)
@@ -42,7 +43,8 @@ def get_bot_response():
 
     if match:
         match = match[0]
-        return text[topics.index(match)]
+        ans = model.get_answer(msg, text[topics.index(match)])
+        return "I believe the answer to your query is: {}. \n For more context, please refer to the following text: {}".format(ans, text[topics.index(match)])
     else:
         return "Sorry, I didn't understand that."
 
