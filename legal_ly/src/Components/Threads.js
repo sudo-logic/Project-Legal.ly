@@ -4,7 +4,8 @@ import Response from "./Response.js";
 import Input from "./Input";
 import darkmode from "../Assets/darkmode.svg";
 import Switch from "react-switch";
-import { AiOutlineRightCircle } from "react-icons/ai";
+import Dictaphone from "./Dictaphone";
+import Send from "../Assets/send.svg";
 
 function Threads() {
   const [checked, setchecked] = useState(false);
@@ -51,7 +52,7 @@ function Threads() {
         </div>
       </div>
       {/* Message Area */}
-      <div className="overflow-y-scroll h-[75vh] py-2 px-4">
+      <div className="overflow-y-scroll h-[75vh] py-2 px-4 scrollbar scrollbar-thumb-gray-900 scrollbar-h-[2vh] ">
         <Response msg="Hello how may I help you?" />
 
         {messages.map((res) => (
@@ -91,14 +92,22 @@ function Threads() {
           className="px-4 w-[60vw] h-[7vh] bg-[#222222] rounded-lg  text-white focus:outline-none focus:border-none"
           onChange={(e) => {
             setinput(e.target.value);
-            // if (input.length() > 0) {
-            //   settyping(true);
-            // }
           }}
         />
-        <button type="submit">
-          <AiOutlineRightCircle className="text-white w-12 h-8 justify-center cursor-pointer mt-2" />
-        </button>
+        <div className="flex">
+          <button type="submit" className="mx-0">
+            <img
+              alt="Send"
+              src={Send}
+              className="text-white w-[4.5vw] h-[4.5vh] justify-center cursor-pointer mt-0.7 ml-2"
+            />
+          </button>
+          <Dictaphone
+            input={input}
+            setinput={setinput}
+            className="cursor-pointer px-0"
+          />
+        </div>
       </form>
     </div>
   );
