@@ -11,17 +11,7 @@ function Threads() {
   const [input, setinput] = useState("");
   const [msg, setmsg] = useState(input);
   const [typing, settyping] = useState(false);
-
-  const responses = [
-    {
-      input: "Hello bot",
-      res: "Hi User",
-    },
-    {
-      input: "Hey what are the prime laws of the country",
-      res: "Hi User2",
-    },
-  ];
+  const [messages, setMessages] = useState([]);
 
   const handleClick = () => {
     if (checked) {
@@ -61,38 +51,55 @@ function Threads() {
         </div>
       </div>
       {/* Message Area */}
-      <div className="overflow-y-scroll h-[75vh]">
-        {responses.map((res) => (
-          <div className="py-2 px-16">
-            <Response msg={res.res} />
+      <div className="overflow-y-scroll h-[75vh] py-2 px-4">
+        <Response msg="Hello how may I help you?" />
+
+        {messages.map((res) => (
+          <div className="py-2 pl-4">
             <Input msg={res.input} />
+            <Response msg={res.res} />
           </div>
         ))}
+        {typing && (
+          <div className="px-4 w-fit p-3 h-fit bg-[#494949] ml-auto mr-16 rounded-lg text-center text-sm text-white rounded-br-none align-right ">
+            Typing ...
+          </div>
+        )}
       </div>
 
-      <div className="mx-2 bg-[#222222] flex justify-between w-[80vw] px-4 py-2 rounded-lg">
+      <form
+        onSubmit={(e) => {
+          e.preventDefault();
+          setMessages([
+            ...messages,
+            {
+              input: input,
+              res: "Yes Hello",
+            },
+          ]);
+          setinput("");
+          settyping(false);
+        }}
+        className="mx-2 bg-[#222222] flex justify-between w-[80vw] px-4 py-2 rounded-lg"
+      >
         <input
+          onFocus={() => settyping(true)}
+          autoFocus
           value={input}
           type="text"
           placeholder="Type your query..."
           className="px-4 w-[60vw] h-[7vh] bg-[#222222] rounded-lg  text-white focus:outline-none focus:border-none"
           onChange={(e) => {
             setinput(e.target.value);
-            if (input.length() > 0) {
-              settyping(true);
-            }
+            // if (input.length() > 0) {
+            //   settyping(true);
+            // }
           }}
         />
-        <button>
-          <AiOutlineRightCircle
-            className="text-white w-12 h-8 justify-center cursor-pointer mt-2"
-            onClick={() => {
-              setmsg(input);
-              setinput("");
-            }}
-          />
+        <button type="submit">
+          <AiOutlineRightCircle className="text-white w-12 h-8 justify-center cursor-pointer mt-2" />
         </button>
-      </div>
+      </form>
     </div>
   );
 }

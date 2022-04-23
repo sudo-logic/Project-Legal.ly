@@ -16,7 +16,7 @@ const Response = ({ msg }) => {
 
   return (
     <div className="p-3 ">
-      <div className="h-fit rounded-lg mt-2 text-sm text-white rounded-bl-none bg-[#222222] p-3 w-fit">
+      <div className="h-fit rounded-lg mt-2 text-sm text-white rounded-bl-none bg-[#222222] p-3 w-fit ml-0">
         {msg}
       </div>
     </div>
