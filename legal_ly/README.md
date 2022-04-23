@@ -25,9 +25,12 @@ This project is a hybrid of pure experimentation and a multitude of algorithms t
 Seq2Seq model was put under training, using diverse datasets and tensorlayer, spacy and pickle libraries. We used this to tackle problems like machine translation, text summarization and question-answering. But since it's generative we had to leave it midway. 
 Along with that, we've used regex for information extraction. Applied lemmatization to provide context to the model. Currently, we are planning on implementing nearest keyword recognition. Once we find the nearest keywords, relevant information can be easily generated.  NearestNeighbours using sklearn is one way we've thought of.
 
-Because of the time crunch, we couldn't train the model fully and add a few more functionalities for our chatbot to be conversational and knowledge-oriented. 
+Because of the time crunch, we couldn't train the model fully and add a few more functionalities for our chatbot to be conversational and knowledge-oriented.
 
-GPT-3, Seq2Seq, reinforcement learning based chatbots and a hybrid of those are some of the methodologies we've tinkered around with. 
+Hence, we had to go with our second plan of using Fuzzy Query Matching to map the input to the most accurate topic in our dataset.
+We now use roberta-base-squad2 (a Question Answering Model trained on the SQuAD2.0 dataset), which extracts answers from given inputs of Question and Context. Narrowing down on the topic helps us narrow down on the data that we send to roberta making the response more accurate.
+
+GPT-3, Seq2Seq, reinforcement learning based chatbots and a hybrid of those are some of the methodologies we've tinkered around with.
 
 
 ## UI MOCKUPS
