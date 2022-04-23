@@ -23,9 +23,9 @@ The prime objective is to structure an intelligent chatbot, which is not only da
 This project is a hybrid of pure experimentation and a multitude of algorithms that we incorporated to ensure accuracy and conciseness.
 
 Seq2Seq model was put under training, using diverse datasets and tensorlayer, spacy and pickle libraries. We used this to tackle problems like machine translation, text summarization and question-answering. Since, this uses RNNs, a lot of training time will be required. 
-Along with that, we've used regex for information extraction. Applied lemmatization to provide context to the model. Currently, we are planning on implementating nearest keyword recognition. Once we find the nearest keywords, relevant information can be easily generated.  NearestNeighbours using sklearn is one way we've thought of.
+Along with that, we've used regex for information extraction. Applied lemmatization to provide context to the model. Currently, we are planning on implementing nearest keyword recognition. Once we find the nearest keywords, relevant information can be easily generated.  NearestNeighbours using sklearn is one way we've thought of.
 
-Once this is done, our chatbot will be conversational and knowledge-oriented. It'll be able to capture the tone of the user, basically incorporating sentiment analysis.
+Because of the time crunch, we couldn't train the model fully and add a few more functionalities for our chatbot to be conversational and knowledge-oriented. 
 
 GPT-3, Seq2Seq, reinforcement learning based chatbots and a hybrid of those are some of the methodologies we've tinkered around with. 
 
