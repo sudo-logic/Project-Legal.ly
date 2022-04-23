@@ -22,7 +22,7 @@
 To deploy this project run
 
 ```bash
-  npm run deploy
+  npm start
 ```
 
 
