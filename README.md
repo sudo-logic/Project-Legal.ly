@@ -34,7 +34,7 @@ GPT-3, Seq2Seq, reinforcement learning based chatbots and a hybrid of those are 
 
 
 ## UI MOCKUPS
-![Why_UPN](https://github.com/sudo-logic/Project-Legal.ly/blob/main/legal_ly/Untitled-1%20%5BRecovered%5D-01.png)
+![Why_UPN](https://github.com/sudo-logic/Project-Legal.ly/blob/main/UI_Mockup.png)
 
 ## Deployment
 
