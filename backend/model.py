@@ -1,4 +1,5 @@
 from transformers import AutoModelForQuestionAnswering, AutoTokenizer, pipeline
+import nltk
 
 model_name = "deepset/roberta-base-squad2"
 
