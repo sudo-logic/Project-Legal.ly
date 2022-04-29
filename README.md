@@ -4,7 +4,7 @@
 **Problem Statement - Chatbot - Legal, Tax, and Compliance**
 <br/>
 
-![legal.ly_main](https://github.com/sudo-logic/Project-Legal.ly/blob/main/legal_ly/forgithub.png)
+![legal.ly_main](https://github.com/sudo-logic/Project-Legal.ly/blob/main/forgithub.png)
 
 <br/>**Legal.ly**, is a chatbot that provides factual and appropriate information to legal queries from central acts. 
 <br/>
